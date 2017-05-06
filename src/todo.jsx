@@ -6,7 +6,7 @@ class Todo {
     this.done = done || false;
     this.uuid = uuid || guid();
     this.status = status || '';
-    this.createdAt = createdAt || new Date();
+    this.createdAt = createdAt || (new Date()).toISOString();
   }
 }
 

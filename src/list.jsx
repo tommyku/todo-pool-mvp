@@ -1,6 +1,16 @@
 import React from 'react';
 import Todo from './todo.jsx';
 
+const ulStyle = {
+  listStyle: 'none',
+  paddingLeft: '0'
+};
+
+const liStyle = {
+  padding: '0.5em 0',
+  backgroundColor: '#dddddd'
+};
+
 class List extends React.Component {
   constructor(props) {
     super(props);
@@ -14,9 +24,9 @@ class List extends React.Component {
 
   todoListItem(props) {
     return (
-      <li key={props.key}>
+      <li key={props.key} style={liStyle}>
         <input type='checkbox'
-          defaultValue={props.done}
+          checked={props.done}
           data-index={props.index}
           onChange={this.handleDone} />
         <input type='text'
@@ -64,7 +74,9 @@ class List extends React.Component {
     let done = e.target.checked;
     let index = e.target.dataset.index;
     let updatedTodo = this.props.todo[index];
+    console.log(updatedTodo);
     updatedTodo.done = done;
+    console.log(updatedTodo);
     this.props.handleUpdate(this.props.type, updatedTodo);
   }
 
@@ -96,14 +108,12 @@ class List extends React.Component {
     return (
       <div>
         <h2>{this.props.primaryHeader}</h2>
-        <ul>
-          <li>
-            <input type='text'
-              placeholder='做乜'
-              onKeyDown={this.handleAdd}
-            />
-          </li>
-          {this.props.todo.map((todo, index)=> {
+        <input type='text'
+          placeholder='做乜'
+          onKeyDown={this.handleAdd}
+        />
+        <ul style={ulStyle}>
+          {(this.props.todo || []).map((todo, index)=> {
             return this.todoListItem({
               key: todo.uuid,
               uuid: todo.uuid,
