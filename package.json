@@ -1,0 +1,29 @@
+{
+  "name": "todo-pool-mvp",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tommyku/todo-pool-mvp.git"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base public",
+    "build": "webpack -p"
+  },
+  "bugs": {
+    "url": "https://github.com/tommyku/todo-pool-mvp/issues"
+  },
+  "homepage": "https://github.com/tommyku/todo-pool-mvp#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-tap-event-plugin": "^2.0.1",
+    "uuid": "^3.0.1",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
